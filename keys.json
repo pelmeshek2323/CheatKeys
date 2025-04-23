@@ -1,0 +1,12 @@
+{
+    "valid_keys": {
+        "VIP-1234-5678-ABCE": {
+            "hwid_lock": false,
+            "expiry": "2026-03-15"
+        },
+        "PREMIUM-9A8B-7C6D": {
+            "hwid_lock": false,
+            "expiry": "nill"
+        }
+    }
+}
