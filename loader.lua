@@ -1,4 +1,4 @@
-
+--не повторяйте мой код пж он залупа
 local Players = game:GetService("Players")
 local UIS = game:GetService("UserInputService")
 local HTTP = game:GetService("HttpService")
