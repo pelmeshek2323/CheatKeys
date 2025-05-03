@@ -1,31 +1,31 @@
--- Project Delta Key System v2.0
+
 local Players = game:GetService("Players")
 local UIS = game:GetService("UserInputService")
 local HTTP = game:GetService("HttpService")
 local LP = Players.LocalPlayer
 
--- Конфигурация
+
 local CONFIG = {
     GitHubURL = "https://raw.githubusercontent.com/pelmeshek/CheatKeys/main/keys.json",
     EncryptionKey = "A1B2C3D4E5F6G7H8",
     MaxAttempts = 3
 }
 
--- Системные переменные
+
 local KeyValid = false
 local AttemptsLeft = CONFIG.MaxAttempts
 
--- Получение HWID
+
 local function GetHWID()
     return game:GetService("RbxAnalyticsService"):GetClientId()
 end
 
--- Шифрование данных
+
 local function Encrypt(data)
     return game:GetService("CryptService"):Hash(data..CONFIG.EncryptionKey)
 end
 
--- Проверка ключа
+
 local function ValidateKey(inputKey)
     local success, keysData = pcall(function()
         return HTTP:JSONDecode(game:HttpGet(CONFIG.GitHubURL))
@@ -49,7 +49,7 @@ local function ValidateKey(inputKey)
     return false
 end
 
--- GUI для ввода ключа
+
 local function CreateKeyUI()
     local ScreenGui = Instance.new("ScreenGui")
     ScreenGui.Name = "KeyAuthSystem"
@@ -83,8 +83,8 @@ local function CreateKeyUI()
         if valid then
             KeyValid = true
             ScreenGui:Destroy()
-            -- Запуск основных функций
-            loadstring(game:HttpGet("https://github.com/pelmeshek2323/PROJECT-DELTA-SAMBO-WOW/blob/main/swift.lua""))()
+            
+             loadstring(game:HttpGet("https://pastebin.com/8VjaEu8U"))() 
         else
             AttemptsLeft = AttemptsLeft - 1
             SubmitBtn.Text = "Неверный ключ! Осталось: "..AttemptsLeft
